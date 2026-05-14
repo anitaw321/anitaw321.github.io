@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 2026: The Future of Racing | 專題報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        f1: {
+                            red: '#e10600',
+                            dark: '#15151e',
+                            silver: '#949498',
+                            blue: '#00d2be', // Petronas-style blue for highlight
+                            accent: '#ff1801'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0b0b0f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(225, 6, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #949498);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .f1-accent-line {
+            height: 4px;
+            width: 60px;
+            background: #e10600;
+            border-radius: 2px;
+        }
+        .section-tag {
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #e10600;
+            font-weight: 800;
+        }
+        .floating-anim {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .scroll-indicator {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, #e10600, transparent);
+            margin: 0 auto;
+        }
+        video, img {
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-4 pt-20">
+        <div class="absolute inset-0 z-0 opacity-20 overflow-hidden">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-f1-red rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-f1-blue rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl">
+            <p class="section-tag mb-4 tracking-[0.3em] opacity-90">Revolutionizing the Grid</p>
+            <h1 class="text-6xl md:text-8xl font-display font-extrabold mb-6 tracking-tighter leading-tight">
+                2026 <span class="text-f1-red">F1</span> EVOLUTION
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                探索新世代動力單元、永續燃料與空氣動力學的全面革新。
+            </p>
+            <div class="mt-12 flex flex-col items-center gap-4">
+                <div class="scroll-indicator"></div>
+                <p class="text-[10px] font-display uppercase tracking-widest text-gray-500">Scroll to Explore</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-32">
+        
+        <!-- 1. Infographic Section (TOP) -->
+        <section class="mb-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="f1-accent-line"></div>
+                <h2 class="text-3xl font-display font-bold">INFO-GRAPHIC | 資訊圖表</h2>
+            </div>
+            
+            <div class="glass-card p-4 md:p-8 overflow-hidden">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-3/5 group relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-f1-red to-f1-blue rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                        <img src='https://opal.google/board/blobs/a9436ef5-3762-42f6-abcb-8bfdefc1b32b' alt='2026 F1 資訊圖表' class="relative w-full rounded-xl hover:scale-[1.02] transition-transform duration-500 cursor-zoom-in" />
+                    </div>
+                    <div class="w-full lg:w-2/5 space-y-6">
+                        <h3 class="text-2xl font-bold text-gradient">關鍵摘要內容</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="text-f1-red mt-1">●</span>
+                                <div>
+                                    <span class="font-bold block text-white">技術變革</span>
+                                    <span class="text-gray-400 text-sm">電能佔比提升至 50%、350kW MGU-K 以及主動式空氣動力系統。</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-f1-red mt-1">●</span>
+                                <div>
+                                    <span class="font-bold block text-white">永續發展</span>
+                                    <span class="text-gray-400 text-sm">2030 淨零排放與 100% 永續燃料的應用。</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-f1-red mt-1">●</span>
+                                <div>
+                                    <span class="font-bold block text-white">經濟發展</span>
+                                    <span class="text-gray-400 text-sm">2.15 億美元預算上限與新車隊凱迪拉克的加入。</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-f1-red mt-1">●</span>
+                                <div>
+                                    <span class="font-bold block text-white">技術規格</span>
+                                    <span class="text-gray-400 text-sm">目標車重 768kg 與車身尺寸調整。</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="pt-6 border-t border-white/10">
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Infographic ID</p>
+                            <p class="font-display font-bold text-f1-blue tracking-wider">M11408921</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Video Section (CENTER) -->
+        <section class="mb-32">
+            <div class="text-center mb-12">
+                <p class="section-tag">Visual Insight</p>
+                <h2 class="text-4xl font-display font-extrabold mt-2">動態視覺：技術展示</h2>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative glass-card p-2 shadow-2xl shadow-f1-red/10">
+                    <video src='https://opal.google/board/blobs/584370ab-fbd9-4812-b4fb-dd191a3f7275' alt='F1 技術短影片' class="w-full rounded-2xl" controls autoplay muted loop></video>
+                </div>
+                <div class="mt-8 flex justify-center">
+                    <div class="px-6 py-3 bg-white/5 rounded-full flex items-center gap-3 border border-white/10">
+                        <div class="w-2 h-2 bg-f1-red rounded-full animate-pulse"></div>
+                        <p class="text-sm text-gray-400 font-light italic">正在播放：2026 技術法規視覺導覽</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Report Content Section (BOTTOM) -->
+        <section class="max-w-5xl mx-auto space-y-16">
+            
+            <!-- Summary Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-6 border-l-4 border-l-f1-red">
+                    <p class="text-f1-red text-xs font-bold uppercase mb-2">技術變革</p>
+                    <p class="text-sm leading-relaxed text-gray-300">2026年動力單元大改制，電能輸出佔比升至50%。</p>
+                </div>
+                <div class="glass-card p-6 border-l-4 border-l-f1-blue">
+                    <p class="text-f1-blue text-xs font-bold uppercase mb-2">永續目標</p>
+                    <p class="text-sm leading-relaxed text-gray-300">2030年淨零排放，採用100%進階永續燃料。</p>
+                </div>
+                <div class="glass-card p-6 border-l-4 border-l-white">
+                    <p class="text-white text-xs font-bold uppercase mb-2">經濟發展</p>
+                    <p class="text-sm leading-relaxed text-gray-300">預算上限調升至2.15億美元，凱迪拉克新車隊加入。</p>
+                </div>
+                <div class="glass-card p-6 border-l-4 border-l-gray-500">
+                    <p class="text-gray-500 text-xs font-bold uppercase mb-2">競技爭議</p>
+                    <p class="text-sm leading-relaxed text-gray-300">針對「馬力歐賽車」式速差已提出2027年修正方案。</p>
+                </div>
+            </div>
+
+            <!-- Detailed Content -->
+            <div class="space-y-24 bg-white/[0.01] p-8 md:p-16 rounded-[40px] border border-white/5">
+                
+                <!-- Section I -->
+                <article>
+                    <div class="flex items-center gap-6 mb-8">
+                        <span class="text-6xl font-display font-black text-white/10 italic">01</span>
+                        <h2 class="text-3xl font-bold">2026年技術法規：系統性重塑</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-300 leading-loose">
+                        <div class="md:col-span-2 space-y-6 text-lg">
+                            <p>根據2024年後期至2026年初的文獻分析，F1即將迎來的變革被視為一次「系統重設」。在動力單元方面，雖然保留1.6升V6渦輪增壓引擎，但廢除結構複雜且成本高昂的熱能回收系統（MGU-H），以吸引奧迪與福特等廠商進駐。</p>
+                            <p>動能回收系統（MGU-K）的輸出功率將從120kW大幅提升至350kW，旨在實現內燃機與電力系統各佔50%的動力分配（50/50 power split）。</p>
+                        </div>
+                        <div class="bg-f1-red/10 p-6 rounded-2xl border border-f1-red/20 self-start">
+                            <h4 class="text-f1-red font-bold mb-4">技術亮點</h4>
+                            <ul class="space-y-3 text-sm font-medium">
+                                <li class="flex justify-between"><span>MGU-K 功率</span> <span class="text-white">350kW</span></li>
+                                <li class="flex justify-between"><span>動力分配</span> <span class="text-white">50% / 50%</span></li>
+                                <li class="flex justify-between"><span>車身寬度</span> <span class="text-white">-100 mm</span></li>
+                                <li class="flex justify-between"><span>最低車重</span> <span class="text-white">768 kg</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-12 glass-card p-8 bg-gradient-to-br from-white/5 to-transparent">
+                        <h3 class="text-xl font-bold mb-4 text-f1-blue italic">主動式空氣動力學 (Active Aerodynamics)</h3>
+                        <p class="text-gray-400 mb-6">為應對直線路段電能輸出下降，引入雙模式切換：</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="p-4 bg-black/40 rounded-xl">
+                                <p class="text-f1-red font-bold mb-1">X-mode (直線模式)</p>
+                                <p class="text-xs text-gray-500">優化直線、低阻力配置</p>
+                            </div>
+                            <div class="p-4 bg-black/40 rounded-xl">
+                                <p class="text-f1-blue font-bold mb-1">Z-mode (彎道模式)</p>
+                                <p class="text-xs text-gray-500">優化彎道、高下壓力配置</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section II -->
+                <article>
+                    <div class="flex items-center gap-6 mb-8">
+                        <span class="text-6xl font-display font-black text-white/10 italic">02</span>
+                        <h2 class="text-3xl font-bold">永續發展：2030 淨零排放進程</h2>
+                    </div>
+                    <div class="prose prose-invert max-w-none text-gray-300 text-lg leading-loose space-y-6">
+                        <p>F1正積極履行其 <span class="text-f1-blue font-bold">Net Zero 2030</span> 承諾。根據2025年發布的永續發展更新報告，該運動在2024年底已較2018年基準減少26%的碳足跡。</p>
+                        <p>關鍵舉措在於2026年全面轉向 <span class="text-white underline decoration-f1-red">100% 進階永續燃料 (Advanced Sustainable Fuels)</span>。此類燃料屬於直接替代燃料 (Drop-in Fuel)，由非糧食類生物質或碳捕集技術製成。在物流方面，透過重資投入永續航空燃料 (SAF) 以及推動賽事區域化 (Regionalization) 編排，力求降低佔總排放量近50%的運輸碳排。</p>
+                    </div>
+                </article>
+
+                <!-- Section III -->
+                <article>
+                    <div class="flex items-center gap-6 mb-8">
+                        <span class="text-6xl font-display font-black text-white/10 italic">03</span>
+                        <h2 class="text-3xl font-bold">經濟演進與競技爭議</h2>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                        <div class="space-y-6">
+                            <div class="p-6 bg-white/5 rounded-3xl border-t border-white/10">
+                                <h4 class="text-xl font-bold mb-4 flex items-center gap-2">
+                                    <span class="w-1.5 h-6 bg-f1-red rounded-full"></span> 經濟演進
+                                </h4>
+                                <p class="text-gray-400">F1已成為企業眼中的珍寶資產 (Trophy Asset)。2026年的預算上限 (Budget Cap) 將調升至 <span class="text-white font-bold">2.15 億美元</span>。隨著凱迪拉克 (Cadillac / GM) 的加入，格網將擴大至 11 支車隊。</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="p-6 bg-white/5 rounded-3xl border-t border-white/10">
+                                <h4 class="text-xl font-bold mb-4 flex items-center gap-2 text-yellow-500">
+                                    <span class="w-1.5 h-6 bg-yellow-500 rounded-full"></span> 競技爭議
+                                </h4>
+                                <p class="text-gray-400 italic">「馬力歐賽車爭議」(Mario Kart debate)</p>
+                                <p class="text-gray-400 mt-2">極端的能量管理可能導致車速出現不自然的「悠悠球效應」(Yo-yoing)。對此，2026年5月的文獻顯示，組織已規劃於2027年進行修正，提議將動力分配調整為 60/40。</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Conclusion -->
+                <div class="p-12 glass-card bg-gradient-to-r from-f1-red/10 to-transparent border-none">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-4">
+                        <svg class="w-8 h-8 text-f1-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        簡要結論
+                    </h2>
+                    <p class="text-xl text-gray-200 font-light leading-relaxed">
+                        2026年的F1轉型標誌著賽車運動在尖端科技、環境責任與商業價值之間的艱難平衡。透過永續燃料與動力單元的革命，F1正確立其作為全球環保科技試驗場的地位。
+                    </p>
+                </div>
+
+                <!-- References -->
+                <div class="pt-12 border-t border-white/10">
+                    <h3 class="text-sm font-display font-bold uppercase tracking-[0.2em] text-gray-500 mb-6">引用的文獻來源 References</h3>
+                    <ul class="space-y-3 text-sm text-gray-400 font-light italic">
+                        <li>1. Formula 1 Technical Working Group. (2024). <span class="text-gray-300">2026 Power Unit and Chassis Regulations Framework.</span></li>
+                        <li>2. F1 Sustainability Committee. (2025). <span class="text-gray-300">Sustainability Update 2025: Path to Net Zero 2030.</span></li>
+                        <li>3. Economic Sports Review. (2025). <span class="text-gray-300">The Financial Evolution of Grand Prix Racing: Revenue and Budget Caps.</span></li>
+                        <li>4. Motorsport Analysis Journal. (May 2026). <span class="text-gray-300">The "Mario Kart" Dilemma: Analyzing Energy Harvesting and the 2027 Proposed Corrections.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="bg-f1-dark py-12 border-t border-white/10 text-center">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-sm tracking-widest mb-2 font-display">THEME EXPLORATION REPORT</p>
+            <h3 class="text-xl font-medium text-white mb-4">
+                【主題探索報告】by <i class="text-blue-500 not-italic italic font-semibold">Anita Wang</i>
+            </h3>
+            <div class="inline-block px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-display text-gray-400 tracking-[0.3em]">
+                STUDENT ID: M11408921
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section, article, .glass-card').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
