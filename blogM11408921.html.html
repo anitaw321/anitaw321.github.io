@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扎哈·哈蒂：流動的建築冒險 | Zaha Hadid Tribute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zaha: {
+                            black: '#0a0a0a',
+                            dark: '#141414',
+                            accent: '#3b82f6',
+                            silver: '#e5e7eb',
+                            glass: 'rgba(255, 255, 255, 0.05)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                        body: ['Noto Sans TC', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'reveal': 'reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass-morphism {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .curve-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+            background-image: radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+
+        .hero-banner {
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        ::selection {
+            background: #3b82f6;
+            color: white;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+
+        .id-badge {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-body">
+
+    <!-- Subtle Background Glows -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/20 blur-[120px] rounded-full z-[-1] animate-pulse-slow"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-900/10 blur-[120px] rounded-full z-[-1] animate-pulse-slow"></div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 w-full z-50 glass-morphism px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <span class="id-badge">STUDENT ID: M11408921</span>
+            <div class="h-4 w-px bg-white/20"></div>
+            <span class="text-xs uppercase tracking-widest font-display font-semibold opacity-70">Architecture Series</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-display tracking-wide opacity-80">
+            <a href="#" class="hover:text-zaha-accent transition-colors">Vision</a>
+            <a href="#" class="hover:text-zaha-accent transition-colors">Legacy</a>
+            <a href="#" class="hover:text-zaha-accent transition-colors">Critique</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex flex-col justify-end pb-20 px-6 max-w-7xl mx-auto">
+        <div class="absolute inset-0 z-0 overflow-hidden hero-banner">
+            <div class="w-full h-full opacity-60 scale-105 hover:scale-100 transition-transform duration-[3s] ease-out">
+                <img src='https://opal.google/board/blobs/1af17cf8-15a8-4790-8fb9-b2636d2e6a77' alt='Zaha Hadid Architecture Banner' class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-zaha-black via-zaha-black/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 animate-reveal">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px w-12 bg-zaha-accent"></span>
+                <span class="text-zaha-accent font-display font-bold tracking-[0.3em] text-sm uppercase">Legendary Architect</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-display font-extrabold leading-tight mb-8">
+                曲線女王的<br>
+                <span class="gradient-text">建築冒險</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed">
+                走進扎哈·哈蒂（Zaha Hadid）的流動世界：當重力不再是限制，建築便成了凝固的詩篇。
+            </p>
+        </div>
+    </header>
+
+    <main class="relative z-10 px-6 max-w-7xl mx-auto">
+        
+        <!-- Intro Section -->
+        <section class="py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <p class="text-lg text-gray-300 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:text-zaha-accent">
+                    當你漫步在現代城市中，是否曾被某些建築奪去呼吸？它們看起來不像是用磚頭蓋的，反而更像是一滴即將墜落的水珠、一場凝固的颶風，或者是從科幻電影中駛出的外星母艦。
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    這就是扎哈·哈蒂（Zaha Hadid）留給世界的視覺語言。今天，讓我們聊聊這位打破「方盒子」傳統、用曲線挑戰重力的傳奇女性。
+                </p>
+            </div>
+            <div class="lg:col-span-5">
+                <div class="glass-morphism p-8 rounded-2xl border-l-4 border-l-zaha-accent">
+                    <h3 class="font-display font-bold text-xl mb-4 text-white uppercase tracking-widest">Philosophy</h3>
+                    <p class="italic text-gray-400">"There are 360 degrees, so why stick to one?"</p>
+                    <div class="mt-4 text-sm font-display text-zaha-accent">— Zaha Hadid</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+            
+            <!-- Section 1: Who is Zaha -->
+            <div class="md:col-span-2 lg:col-span-2 bento-card glass-morphism p-10 rounded-3xl flex flex-col justify-between overflow-hidden relative group">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-zaha-accent/10 rounded-full blur-3xl group-hover:bg-zaha-accent/20 transition-colors"></div>
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-3xl">📌</span>
+                        <h2 class="text-3xl font-bold font-display tracking-tight text-white">一、 曲線女王駕到！誰是扎哈·哈蒂？</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-300 relative z-10">
+                        <p>在建築界，扎哈·哈蒂這個名字就是「力量」與「流動」的代名詞。過去數百年，建築被直角、水平線與垂直牆面所統治，但扎哈卻宣告：<span class="text-white font-bold underline decoration-zaha-accent underline-offset-4">世界是不規則的，美應該是流動的。</span></p>
+                        <p>她被譽為「曲線女王」，透過其創立的 <strong>Zaha Hadid Architects (ZHA)</strong> 事務所，她將「流體動力學」引入建築設計，讓鋼筋混凝土呈現出一種不可思議的動態感。</p>
+                    </div>
+                </div>
+                <div class="mt-12 flex flex-wrap gap-4 relative z-10">
+                    <span class="px-4 py-2 bg-white/5 rounded-full text-xs font-display tracking-wider border border-white/10 uppercase">Fluidity</span>
+                    <span class="px-4 py-2 bg-white/5 rounded-full text-xs font-display tracking-wider border border-white/10 uppercase">Dynamics</span>
+                    <span class="px-4 py-2 bg-white/5 rounded-full text-xs font-display tracking-wider border border-white/10 uppercase">Innovation</span>
+                </div>
+            </div>
+
+            <!-- Sidebar Stat -->
+            <div class="bento-card bg-gradient-to-br from-zaha-accent to-blue-700 p-10 rounded-3xl flex flex-col justify-center items-center text-center">
+                <div class="text-6xl font-display font-black mb-2">ZHA</div>
+                <div class="text-sm uppercase tracking-[0.3em] font-semibold opacity-80">Defining the Future</div>
+                <div class="mt-8 text-xs font-light opacity-70 leading-relaxed">
+                    從倫敦水上運動中心到北京大興機場，ZHA 的作品證明了建築可以像風、像水、像音樂。
+                </div>
+            </div>
+
+            <!-- Section 2: Journey -->
+            <div class="lg:col-span-3 bento-card glass-morphism p-10 rounded-3xl relative overflow-hidden">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/3">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="text-3xl">📌</span>
+                            <h2 class="text-3xl font-bold font-display tracking-tight text-white">二、 逆襲之路</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6 italic">從「紙上建築師」到普立茲克首位女性大師</p>
+                        <p class="text-gray-300">英雄的誕生往往伴隨著質疑。扎哈的職業生涯並非一帆風順，甚至可以說是一場長達數十年的抗爭。</p>
+                    </div>
+                    <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                            <h4 class="text-zaha-accent font-bold mb-3">巴格達的靈魂</h4>
+                            <p class="text-sm text-gray-400">主修數學，讓她對複雜幾何有著過人的直覺。倫敦 AA 學院啟發了她激進前衛的大腦。</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                            <h4 class="text-zaha-accent font-bold mb-3">漫長的寒冬</h4>
+                            <p class="text-sm text-gray-400">早期被戲稱為「紙上建築師」，圖紙美如畫作，但工程師曾認為「根本蓋不出來」。</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                            <h4 class="text-zaha-accent font-bold mb-3">巔峰 2004</h4>
+                            <p class="text-sm text-gray-400">維特拉消防局落成證明夢想可行。2004 成為首位獲普立茲克獎的女性，改寫歷史。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Why we love her -->
+            <div class="md:col-span-2 bento-card glass-morphism p-10 rounded-3xl flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">📌</span>
+                    <h2 class="text-3xl font-bold font-display tracking-tight text-white">三、 為什麼全世界都愛她的建築？</h2>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-blue-500/10 rounded-2xl border-l-2 border-blue-500">
+                        <p class="text-gray-200"><span class="font-bold text-zaha-accent">參數化設計 (Parametricism)：</span> 利用電腦演算法，將光照、人流、結構力學等數據「演算」出最優化的有機型態。</p>
+                    </div>
+                    <p class="text-gray-300">
+                        大眾熱愛她的作品，是因為那種衝擊感——廣州大劇院像是珠江畔的兩塊礫石，北京大興機場則宛如展翅的海星。她把冷冰冰的數據轉化為溫暖且震撼的視覺詩篇。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 4: The Price of Beauty -->
+            <div class="bento-card glass-morphism p-10 rounded-3xl border border-red-500/20">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">📌</span>
+                    <h2 class="text-3xl font-bold font-display tracking-tight text-white">四、 美麗的代價</h2>
+                </div>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex gap-2">
+                        <span class="text-zaha-accent font-bold">1.</span>
+                        <span>形式 vs 功能：流線牆面可能造成死角或維修困難。</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-zaha-accent font-bold">2.</span>
+                        <span>天價成本：東京奧運場館案因造價飆升最終撤案。</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-zaha-accent font-bold">3.</span>
+                        <span>社會責任：卡達場館引發的勞工權益與現場人權討論。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Future -->
+            <div class="lg:col-span-3 bento-card glass-morphism p-10 rounded-3xl mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">📌</span>
+                        <h2 class="text-3xl font-bold font-display tracking-tight text-white">五、 傳奇謝幕後，未來還會更酷嗎？</h2>
+                    </div>
+                    <div class="text-sm text-gray-400 font-display tracking-widest px-4 py-1 border border-white/20 rounded-full">EST. 2016-FUTURE</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group">
+                        <div class="text-zaha-accent font-black text-4xl mb-2 opacity-30 group-hover:opacity-100 transition-opacity">01</div>
+                        <h4 class="text-white font-bold mb-2">環保尖兵</h4>
+                        <p class="text-gray-400 text-sm">沙迦 BEEAH 總部結合 AI 與智慧能源，實現零排放目標。</p>
+                    </div>
+                    <div class="group">
+                        <div class="text-zaha-accent font-black text-4xl mb-2 opacity-30 group-hover:opacity-100 transition-opacity">02</div>
+                        <h4 class="text-white font-bold mb-2">黑科技與元宇宙</h4>
+                        <p class="text-gray-400 text-sm">研究 3D 打印與機器人施工，甚至在虛擬世界蓋起不受重力限制的城池。</p>
+                    </div>
+                    <div class="group">
+                        <div class="text-zaha-accent font-black text-4xl mb-2 opacity-30 group-hover:opacity-100 transition-opacity">03</div>
+                        <h4 class="text-white font-bold mb-2">管理轉型</h4>
+                        <p class="text-gray-400 text-sm">事務所轉向員工所有制，確保創意不再依賴單一英雄。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Conclusion -->
+        <section class="mb-32 max-w-4xl mx-auto text-center px-4">
+            <div class="inline-block p-1 mb-8 bg-gradient-to-r from-zaha-accent to-purple-500 rounded-full">
+                <div class="bg-zaha-black px-6 py-2 rounded-full font-display font-bold text-sm tracking-widest uppercase">Conclusion</div>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-10 gradient-text">扎哈·哈蒂的一生，是將數學、科技與藝術完美融合的旅程。</h2>
+            <p class="text-xl text-gray-400 leading-relaxed mb-12">
+                她讓我們看見，建築不只是提供遮蔽的工具，更是對人類生活邊界的探索。
+            </p>
+
+            <!-- Interaction Box -->
+            <div class="glass-morphism p-12 rounded-[2rem] text-left relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-zaha-accent/10 rounded-bl-full transition-transform group-hover:scale-150 duration-700"></div>
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="text-3xl">💬</span> 讀者討論室
+                </h3>
+                <p class="text-gray-300 mb-8 text-lg">
+                    你最喜歡哪座扎哈的建築？如果能住在這樣「外星感十足」的空間裡，你願意忍受那一點點「功能上的不便」嗎？歡迎在下方分享你的觀點！
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="text" placeholder="分享你的想法..." class="flex-grow bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-zaha-accent transition-all">
+                    <button class="bg-zaha-accent hover:bg-blue-600 text-white font-bold px-10 py-4 rounded-xl transition-all shadow-lg shadow-zaha-accent/20">發送評論</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Visual Accents -->
+    <div class="fixed top-[20%] right-[-5%] w-[400px] h-[400px] pointer-events-none">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full opacity-10 animate-float">
+            <path fill="#3b82f6" d="M44.7,-76.4C58.1,-69.2,69.2,-58.1,77.3,-44.7C85.4,-31.3,90.5,-15.7,89.7,-0.5C88.8,14.7,82,29.3,72.7,42.4C63.4,55.4,51.6,66.8,38,73.4C24.4,80,9,81.7,-6.1,81.3C-21.2,80.8,-35.9,78.2,-49,70.8C-62.1,63.4,-73.6,51.3,-79.8,37.3C-86,23.3,-86.9,7.4,-84.6,-8.1C-82.3,-23.6,-76.8,-38.7,-67.2,-50.8C-57.6,-62.9,-43.9,-72,-30.1,-78.4C-16.3,-84.8,-2.4,-88.4,11.2,-87.3C24.8,-86.2,40.1,-80.4,44.7,-76.4Z" transform="translate(100 100)" />
+        </svg>
+    </div>
+
+    <!-- Scroll Reveal Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-reveal');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.bento-card').forEach(card => {
+                card.style.opacity = '0';
+                observer.observe(card);
+            });
+        });
+
+        // Parallax effect for the hero banner
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const banner = document.querySelector('.hero-banner img');
+            if (banner) {
+                banner.style.transform = `translateY(${scrolled * 0.4}px) scale(${1 + scrolled * 0.0005})`;
+            }
+        });
+    </script>
+
+</body>
+</html>
